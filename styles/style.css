@@ -16,6 +16,9 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 h1,
@@ -48,4 +51,276 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.content {
+  width: 1140px;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-areas: 
+  "result content__details";
+  gap: 30px;
+}
+
+.result {
+  grid-area: result;
+}
+
+.content__details {
+  grid-area: content__details;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.content__list-container {
+  overflow: scroll;
+  height: 298px;
+  position: relative;
+}
+
+.result__video-container {
+  width: 711px;
+  height: 386px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.result__video-container video {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.content__list {
+  display: grid;
+  gap: 30px;
+}
+
+.search-form__fieldset-title {
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-size: 18px;
+  padding-bottom: 7.5px;
+  
+}
+
+.title {
+  font-family: Oswald;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.content__video-card-title {
+  font-family: Oswald;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 196px;
+}
+
+.content__video-card-description {
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 16.2px;
+  line-clamp: 4;
+}
+
+.search-form__textfield {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  appearance: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgba(255 255 255 / 0.7);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+  border: 1px solid #fff;
+}
+
+.search-form__fieldset {
+  border: transparent;
+  flex: 1;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  cursor: pointer;
+  flex: 1;
+}
+
+.search-form__label-text {
+  font-family: Fira Sans Condensed;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border: 1px solid white;
+  background: transparent;
+}
+
+.search-form__checkbox.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.search-form__submit-button {
+  flex-shrink: 0;
+  align-self: flex-end;
+  width: 194px;
+  padding: 10px 20px 10px 20px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
+input:focus {
+  outline: none;
+}
+
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+  outline: 1px solid #fff;
+  padding: 2px;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid white;
+  font-family: Fira Sans Condensed;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.more-button {
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+button:active {
+  background-color: #545050;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__video-card:focus {
+  outline: none;
+}
+
+.content__video-card:focus-visible {
+  outline: 1px solid #fff;
 }
